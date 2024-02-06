@@ -1,0 +1,32 @@
+@startuml exercice2
+  class Pokemon {
+    - String Name
+    - int Level
+    - String Type
+  }
+
+  class PokemonService {
+    + GetItems() :  Iterable<Pokemon>
+  }
+
+class PokemonViewModel {
+    - StringProperty Name
+    - IntegerProperty Level
+    - StringProperty Type
+    - update()
+}
+
+class PokemonView {
+    + PokemonView(PokemonViewModel pvm)
+    - update(ActionEvent evt)
+}
+
+Pokemon -[hidden]--> PokemonService
+
+PokemonView -right- PokemonViewModel : Bindings
+
+PokemonViewModel -up- PokemonService
+
+PokemonViewModel -right- Pokemon
+
+@enduml
