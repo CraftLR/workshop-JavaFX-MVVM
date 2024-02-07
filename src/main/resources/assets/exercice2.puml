@@ -1,16 +1,45 @@
 @startuml exercice2
+enum PokemonType{
+    GRASS
+    POISON
+    FIRE
+    WATER
+    ELECTRIC
+    PSYCHIC
+    ICE
+    DRAGON
+    NORMAL
+    FIGHTING
+    FLYING
+    GROUND
+    ROCK
+    BUG
+    GHOST
+    STEEL
+    FAIRY
+}
+
 class Pokemon {
     - int id
     - String name
-    - String type
+    - PokemonType type
+    - String spriteURL
+    + getId() : int
+    + getName() : String
+    + getTypes() : List<PokemonType>
+    + getSpriteURL() : String
+    + toString() : String
 }
 
 class PokemonService {
-    + getPokemons() :  Iterable<Pokemon>
+    + getPokemons() :  List<Pokemon>
     + getPokemonsById(int id) : Pokemon
 }
 
 class PokemonViewModel {
+    - {static} List<Pokemon> allPokemons
+    - {static} PokemonService service
+    - Pokemon currentPokemon
     - StringProperty nameProperty
     - IntegerProperty idProperty
     - StringProperty typeProperty
@@ -22,12 +51,13 @@ class PokemonView {
     - update(ActionEvent evt)
 }
 
-Pokemon -[hidden]--> PokemonService
+PokemonService --> "*" Pokemon 
 
-PokemonView -right- PokemonViewModel : Bindings
+PokemonView -- PokemonViewModel : Bindings
 
-PokemonViewModel -up- PokemonService
+PokemonViewModel -->"1" PokemonService
 
-PokemonViewModel -right- Pokemon
+PokemonViewModel -- Pokemon
 
+Pokemon --> "*" PokemonType : type
 @enduml
