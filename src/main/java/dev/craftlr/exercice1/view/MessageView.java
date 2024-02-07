@@ -18,7 +18,7 @@ public class MessageView extends StackPane {
         this.viewModel = viewModel;
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(
-                "/dev/craftlr/exercice1/MessageView.fxml"));
+                "/dev/craftlr/exercice1/view/MessageView.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 
@@ -35,6 +35,6 @@ public class MessageView extends StackPane {
     }
 
     private void createBindings() {
-        throw new UnsupportedOperationException("Not yet implemented");
+        // TODO
     }
 }
