@@ -1,7 +1,8 @@
-package dev.craftlr.exercice1;
+package dev.craftlr.exercice1.view;
 
 import java.io.IOException;
 
+import dev.craftlr.exercice1.viewmodel.MessageViewModel;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;

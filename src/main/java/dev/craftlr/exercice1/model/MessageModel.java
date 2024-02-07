@@ -1,4 +1,4 @@
-package dev.craftlr.exercice1;
+package dev.craftlr.exercice1.model;
 
 public class MessageModel {
     private String message;

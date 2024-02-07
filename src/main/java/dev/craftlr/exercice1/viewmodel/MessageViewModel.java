@@ -1,5 +1,6 @@
-package dev.craftlr.exercice1;
+package dev.craftlr.exercice1.viewmodel;
 
+import dev.craftlr.exercice1.model.MessageModel;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 

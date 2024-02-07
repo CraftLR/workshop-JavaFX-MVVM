@@ -1,5 +1,8 @@
 package dev.craftlr.exercice1;
 
+import dev.craftlr.exercice1.model.MessageModel;
+import dev.craftlr.exercice1.view.MessageView;
+import dev.craftlr.exercice1.viewmodel.MessageViewModel;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
