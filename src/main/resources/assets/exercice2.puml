@@ -1,18 +1,19 @@
 @startuml exercice2
-  class Pokemon {
-    - String Name
-    - int Level
-    - String Type
-  }
+class Pokemon {
+    - int id
+    - String name
+    - String type
+}
 
-  class PokemonService {
-    + GetItems() :  Iterable<Pokemon>
-  }
+class PokemonService {
+    + getPokemons() :  Iterable<Pokemon>
+    + getPokemonsById(int id) : Pokemon
+}
 
 class PokemonViewModel {
-    - StringProperty Name
-    - IntegerProperty Level
-    - StringProperty Type
+    - StringProperty nameProperty
+    - IntegerProperty idProperty
+    - StringProperty typeProperty
     - update()
 }
 

@@ -7,4 +7,5 @@ open module tp.mvvm {
 
     exports dev.craftlr;
     exports dev.craftlr.exercice1;
+    exports dev.craftlr.exercice2;
 }
