@@ -207,3 +207,43 @@ Ce diagramme est généré avec l'outil PlantUML. La convention graphique des sc
 
 
 Cet exemple, permet de comprendre plus en détail le pattron MVVM avec l'utilisation de chaque couche. Pour aller plus loin, vous pouvez ajouter une vue liste de Pokémons avec la possibilité de choisir celui dont on souhaite voir la fiche descriptive.
+
+
+### Exercice 2 : "Créateur de Mèmes"
+Le créateur de Mèmes a pour objectif de développer une application JavaFX qui permet aux utilisateurs de créer des mèmes en sélectionnant une image et en ajoutant du texte. Cet exercice met en pratique l'architecture MVVM (Model-View-ViewModel), la manipulation d'images, et l'interaction utilisateur en JavaFX.
+
+#### Structure de l'Application
+
+- **MemeImage** : Classe contenant l'image sélectionnée et les textes (en haut et en bas). Elle aura des propriétés pour l'image et les deux chaînes de texte.
+
+- **MemeViewModel** : S'occupe de la logique métier, comme la mise à jour des textes et l'image. Utilise des propriétés observables pour le binding avec la View.
+
+- Interface utilisateur construite avec FXML, comprenant :
+  - Un sélecteur de fichiers pour choisir une image.
+  - Deux champs de texte pour saisir le texte du mème (en haut et en bas de l'image).
+  - Un aperçu de l'image avec le texte superposé.
+  - Un bouton pour sauvegarder le mème créé.
+
+#### Travaille à faire : 
+
+1. **Création du Modèle (Model)**
+   - Définissez une classe `MemeImage` avec des propriétés pour l'image (`Image` de JavaFX) et les textes (`String`).
+
+2. **Écriture du ViewModel**
+   - Créez `MemeViewModel` avec des propriétés observables pour l'image et les textes. Ajoutez des méthodes pour mettre à jour ces propriétés.
+
+4. **Conception de l'Interface Utilisateur (View)**
+   - Utilisez Scene Builder pour créer `MemeCreatorView.fxml`.
+   - Ajoutez les éléments UI nécessaires (voir ci-dessus).
+
+5. **Implémentation du code-behind**
+   - Liez la View avec le ViewModel. Utilisez des bindings JavaFX pour synchroniser l'état de l'UI avec le ViewModel.
+
+6. **Fonction de Sauvegarde**
+   - Implémentez une méthode pour sauvegarder l'image générée en tant que fichier image, en superposant le texte à l'image sélectionnée.
+
+#### Conseils
+
+- Pour superposer le texte sur l'image, vous devrez utiliser la classe `Canvas` ou `GraphicsContext` de JavaFX.
+- Explorez la classe `FileChooser` de JavaFX pour implémenter le sélecteur d'images.
+- La sauvegarde de l'image peut être réalisée en utilisant la classe `WritableImage` et `ImageIO`.
